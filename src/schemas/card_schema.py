@@ -1,8 +1,4 @@
-from flask_marshmallow import Marshmallow
-# import app
-from vesuvius import ma
-# Product Schema
-# ma = Marshmallow(app)
+from .marshmallow import ma
 
 
 class ProductSchema(ma.Schema):
