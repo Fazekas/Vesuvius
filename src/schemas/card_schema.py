@@ -3,7 +3,7 @@ from .marshmallow import ma
 
 class ProductSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'name', 'description', 'price', 'qty')
+        fields = ("id", "name", "description", "price", "qty")
 
 
 # Init schema
