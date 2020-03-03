@@ -3,16 +3,16 @@ from ..entities import card_entity
 from ..schemas import card_schema
 from ..dbms.rdb import db
 
-card_blueprint = Blueprint('card', __name__, url_prefix='/card')
+card_blueprint = Blueprint("card", __name__, url_prefix="/card")
 
 
 # Create a Product
-@card_blueprint.route('/product', methods=['POST'])
+@card_blueprint.route("/product", methods=["POST"])
 def add_product():
-    name = request.json['name']
-    description = request.json['description']
-    price = request.json['price']
-    quantity = request.json['qty']
+    name = request.json["name"]
+    description = request.json["description"]
+    price = request.json["price"]
+    quantity = request.json["qty"]
 
     new_product = card_entity.Card(name, description, price, quantity)
 
@@ -20,6 +20,7 @@ def add_product():
     db.session.commit()
 
     return card_schema.product_schema.jsonify(new_product)
+
 
 #
 # # Get all products
