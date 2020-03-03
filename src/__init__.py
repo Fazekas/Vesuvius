@@ -1,5 +1,6 @@
 from flask import Flask
 from src.controllers.card_controller import card_blueprint
+from src.controllers.subject_controller import subject_blueprint
 from src.dbms.rdb import db
 from src.schemas.marshmallow import ma
 
@@ -20,6 +21,7 @@ def create_app(test_config=None):
     ma.init_app(app)
 
     app.register_blueprint(card_blueprint)
+    app.register_blueprint(subject_blueprint)
 
     @app.cli.command('create-all')
     def create_all():

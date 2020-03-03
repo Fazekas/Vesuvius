@@ -1,11 +1,11 @@
 from .marshmallow import ma
 
 
-class ProductSchema(ma.Schema):
+class CardSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'name', 'description', 'price', 'qty')
+        fields = ('id', 'subject_id', 'question', 'answer', 'picture')
 
 
 # Init schema
-product_schema = ProductSchema()
-products_schema = ProductSchema(many=True)
+card_schema = CardSchema()
+cards_schema = CardSchema(many=True)
