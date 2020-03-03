@@ -1,6 +1,6 @@
 # Vesuvius
 run `pipenv shell`
-then run `pipenv intall` 
+then run `pipenv install` 
 
 #First time setup 
 create instance/development.cfg
