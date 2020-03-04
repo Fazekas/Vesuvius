@@ -8,4 +8,4 @@ class SubjectSchema(ma.Schema):
 
 # Init schema
 subject_schema = SubjectSchema()
-Subjects_schema = SubjectSchema(many=True)
+subjects_schema = SubjectSchema(many=True)
