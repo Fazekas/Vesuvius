@@ -3,7 +3,7 @@ from .marshmallow import ma
 
 class SubjectSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'name')
+        fields = ("id", "name")
 
 
 # Init schema

@@ -4,12 +4,11 @@ from ..schemas import card_schema
 from ..dbms.rdb import db
 
 
-
 def add_card():
-    question = request.json['question']
-    answer = request.json['answer']
-    picture = request.json['picture']
-    subject_id = request.json['subject_id']
+    question = request.json["question"]
+    answer = request.json["answer"]
+    picture = request.json["picture"]
+    subject_id = request.json["subject_id"]
 
     new_card = card_entity.Card(question, answer, picture, subject_id)
 
@@ -24,6 +23,7 @@ def get_cards():
     result = card_schema.cards_schema.dump(all_cards)
     return jsonify(result)
 
+
 def get_card(card_id):
     card = card_entity.Card.query.get(card_id)
     return card_schema.card_schema.jsonify(card)
@@ -31,10 +31,10 @@ def get_card(card_id):
 
 def update_card(card_id):
     card = card_entity.Card.query.get(card_id)
-    question = request.json['question']
-    answer = request.json['answer']
-    picture = request.json['picture']
-    subject_id = request.json['subject_id']
+    question = request.json["question"]
+    answer = request.json["answer"]
+    picture = request.json["picture"]
+    subject_id = request.json["subject_id"]
 
     card.question = question
     card.answer = answer
@@ -54,4 +54,4 @@ def delete_card(card_id):
 
 
 def get():
-    return send_file('./images/swissWinterNight.jpg')
+    return send_file("./images/swissWinterNight.jpg")

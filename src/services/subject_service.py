@@ -5,7 +5,7 @@ from ..dbms.rdb import db
 
 
 def add_subject():
-    name = request.json['name']
+    name = request.json["name"]
 
     new_subject = subject_entity.Subject(name)
 
@@ -20,6 +20,7 @@ def get_subjects():
     result = subject_schema.subjects_schema.dump(all_subjects)
     return jsonify(result)
 
+
 def get_subject(subject_id):
     subject = subject_entity.Subject.query.get(subject_id)
     return subject_schema.subject_schema.jsonify(subject)
@@ -27,12 +28,13 @@ def get_subject(subject_id):
 
 def update_subject(subject_id):
     subject = subject_entity.Subject.query.get(subject_id)
-    name = request.json['name']
+    name = request.json["name"]
 
     subject.name = name
 
     db.session.commit()
     return subject_schema.subject_schema.jsonify(subject)
+
 
 def delete_subject(subject_id):
     subject = subject_entity.Subject.query.get(subject_id)
@@ -41,5 +43,6 @@ def delete_subject(subject_id):
     db.session.commit()
     return subject_schema.subject_schema.jsonify(subject)
 
+
 def get():
-    return send_file('./images/exoplanet.jpg')
+    return send_file("./images/exoplanet.jpg")
