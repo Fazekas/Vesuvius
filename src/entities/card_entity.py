@@ -3,13 +3,13 @@ from ..dbms.rdb import db
 
 class Card(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), unique=True)
-    description = db.Column(db.String(200))
-    price = db.Column(db.Float)
-    qty = db.Column(db.Integer)
+    subject_id = db.Column(db.Integer, db.ForeignKey("subject.id"))
+    question = db.Column(db.String(200))
+    answer = db.Column(db.String(200))
+    picture = db.Column(db.String(200))
 
-    def __init__(self, name, description, price, qty):
-        self.name = name
-        self.description = description
-        self.price = price
-        self.qty = qty
+    def __init__(self, answer, question, picture, subject_id):
+        self.question = question
+        self.answer = answer
+        self.picture = picture
+        self.subject_id = subject_id
