@@ -10,7 +10,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
 
     if test_config is None:
-        app.config.from_pyfile('development.cfg')
+        app.config.from_pyfile("development.cfg")
     else:
         app.config.from_mapping(test_config)
 
@@ -23,11 +23,11 @@ def create_app(test_config=None):
     app.register_blueprint(card_blueprint)
     app.register_blueprint(subject_blueprint)
 
-    @app.cli.command('create-all')
+    @app.cli.command("create-all")
     def create_all():
         db.create_all(app=app)
 
-    @app.cli.command('drop-all')
+    @app.cli.command("drop-all")
     def drop_all():
         db.drop_all(app=app)
 
