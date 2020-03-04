@@ -1,9 +1,5 @@
 from flask import request, jsonify, Blueprint, send_file
 
-# from ..entities import subject_entity
-# from ..schemas import subject_schema
-# from ..dbms.rdb import db
-
 from ..services import subject_service
 
 subject_blueprint = Blueprint("subject", __name__, url_prefix="/subject")
